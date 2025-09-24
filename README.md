@@ -1,4 +1,4 @@
-# CS 696A — Lab 3: Tic-Tac-Toe
+#Tic-Tac-Toe
 
 This project is my submission for **Lab 3** in *CS 696A: Full-Stack Entrepreneurs App Development*.  
 It is a complete implementation of **Tic-Tac-Toe** using **HTML, CSS, and JavaScript**.
@@ -23,3 +23,4 @@ It is a complete implementation of **Tic-Tac-Toe** using **HTML, CSS, and JavaSc
 - **Vanilla JavaScript (ES6)** for game logic  
 
 ---
+
