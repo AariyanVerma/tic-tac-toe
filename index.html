@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tic-Tac-Toe Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="page">
+    <h1>Tic-Tac-Toe</h1>
+
+    <div class="controls">
+      <label class="toggle">
+        <input type="checkbox" id="vsBotToggle" />
+        <span>Play vs Bot (O)</span>
+      </label>
+      <button id="resetBtn" onclick="initializeGame()">Reset</button>
+    </div>
+
+    <div id="statusText" class="status">Current turn: X</div>
+
+    <div class="board" id="gameBoard">
+      <div class="row">
+        <div class="cell" onclick="cellClicked(0)" data-index="0"></div>
+        <div class="cell" onclick="cellClicked(1)" data-index="1"></div>
+        <div class="cell" onclick="cellClicked(2)" data-index="2"></div>
+      </div>
+      <div class="row">
+        <div class="cell" onclick="cellClicked(3)" data-index="3"></div>
+        <div class="cell" onclick="cellClicked(4)" data-index="4"></div>
+        <div class="cell" onclick="cellClicked(5)" data-index="5"></div>
+      </div>
+      <div class="row">
+        <div class="cell" onclick="cellClicked(6)" data-index="6"></div>
+        <div class="cell" onclick="cellClicked(7)" data-index="7"></div>
+        <div class="cell" onclick="cellClicked(8)" data-index="8"></div>
+      </div>
+    </div>
+
+    <div class="scoreboard">
+      <div><strong>Score X:</strong> <span id="scoreX">0</span></div>
+      <div><strong>Score O:</strong> <span id="scoreO">0</span></div>
+      <div><strong>Draws:</strong> <span id="scoreD">0</span></div>
+    </div>
+
+    <footer class="footer">
+      <p>CS 696A — Lab 3 • Tic-Tac-Toe implemented with HTML, CSS &amp; JavaScript.</p>
+    </footer>
+  </div>
+</body>
+</html>

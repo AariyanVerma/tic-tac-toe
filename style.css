@@ -1,0 +1,85 @@
+* { box-sizing: border-box; }
+:root { --cell: 90px; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  display: flex;
+  min-height: 100vh;
+}
+
+.page {
+  margin: auto;
+  width: min(92vw, 720px);
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+  text-align: center;
+}
+
+h1 { margin: 0.5rem 0 0; letter-spacing: 0.02em; }
+
+.controls { display: flex; gap: 1rem; align-items: center; }
+button {
+  padding: 0.6rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #334155;
+  background: #1f2937;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.15); }
+.toggle { display: inline-flex; align-items: center; gap: 0.5rem; }
+.toggle input { transform: scale(1.2); cursor: pointer; }
+.status { min-height: 1.5rem; font-weight: 600; color: #cbd5e1; }
+
+.board { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.row   { display: flex; flex-direction: row; gap: 10px; }
+
+.cell {
+  width: var(--cell);
+  height: var(--cell);
+  border: 2px solid #475569;
+  background: #0b1220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--cell) * 0.6);
+  font-weight: 700;
+  border-radius: 1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 120ms ease, background 180ms ease, border-color 180ms ease;
+}
+.cell:hover { transform: translateY(-1px); border-color: #60a5fa; }
+.cell:active { transform: translateY(1px); }
+.cell.filled { cursor: default; }
+
+.cell.win {
+  background: #0a2a12;
+  border-color: #22c55e;
+  animation: pop 380ms ease both;
+}
+@keyframes pop {
+  0% { transform: scale(0.95); }
+  60% { transform: scale(1.06); }
+  100% { transform: scale(1.0); }
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+  background: #0b1220;
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+}
+.footer { opacity: 0.7; font-size: 0.9rem; }
+
+@media (max-width: 420px) {
+  :root { --cell: 72px; }
+}
